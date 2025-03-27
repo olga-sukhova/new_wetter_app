@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E9F2A2; /* Нежно-зелёный фон */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Высота окна браузера */
+        }
+        .container {
+            text-align: center;
+            background: #fff; /* Белый фон для окна */
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Добавлена тень */
+            padding: 20px 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #4CAF50; /* Красивый зелёный заголовок */
+            margin-bottom: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #4CAF50; /* Зелёная кнопка */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049; /* Чуть более тёмный цвет на наведении */
+        }
+        p, h2 {
+            color: #555; /* Нейтральный тёмно-серый цвет текста */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form method="post">
+            <input type="text" name="city" placeholder="Enter city" required>
+            <button type="submit">Get Weather</button>
+        </form>
+        {% if weather %}
+            <h2>Weather in {{ weather['name'] }}</h2>
+            <p>Temperature: {{ weather['main']['temp'] }} °C</p>
+            <p>Weather: {{ weather['weather'][0]['description'] }}</p>
+        {% else %}
+            <p>Please enter a city to see the weather.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
