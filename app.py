@@ -4,7 +4,6 @@ from db import get_db
 import webbrowser
 import threading
 import os
-import signal
 import sys
 
 app = Flask(__name__)

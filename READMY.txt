@@ -1,0 +1,35 @@
+# Wetter-App
+
+Eine einfache Webanwendung, die aktuelle Wetterdaten für eine Stadt mithilfe der [OpenWeather](https://openweathermap.org/)-API anzeigt.
+
+## Einrichtung
+
+1. **Abhängigkeiten installieren:**
+   ```bash
+   pip install flask pymongo requests python-dotenv
+API-Schlüssel einrichten:
+
+Holen Sie einen Schlüssel von OpenWeather.
+
+Erstellen Sie eine .env-Datei und fügen Sie hinzu:
+
+API_weather_app=Ihr_API_Schlüssel
+MongoDB starten: Stellen Sie sicher, dass MongoDB lokal läuft.
+
+Ausführung
+Starten Sie die Anwendung:
+
+bash
+python app.py
+Öffnen Sie http://127.0.0.1:5000 im Browser.
+
+Geben Sie eine Stadt ein, um Wetterdaten abzurufen.
+
+Dateien
+app.py: Hauptprogramm, das Flask und MongoDB integriert.
+
+weather_api.py: Funktion, die Wetterdaten abruft.
+
+db.py: Verbindung zur MongoDB-Datenbank.
+
+index.html: Benutzeroberfläche im Ordner templates.
